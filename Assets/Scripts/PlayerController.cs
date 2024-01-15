@@ -40,7 +40,6 @@ public class PlayerController : MonoBehaviour
         if (IsGrounded() && Input.GetKeyDown(KeyCode.Space))
         {
             m_Rigidbody.velocity = Vector2.up * jumpForce;
-            //m_Rigidbody.AddForce(Vector2.up * jumpForce,ForceMode2D.Impulse);
         }
 
         if (move != 0)
@@ -92,10 +91,6 @@ public class PlayerController : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Enemy"))
         {
-/*            if (transform.position.y > collision.gameObject.transform.position.y && !IsGrounded())
-            {
-                
-            }*/
             FillKill();
             Destroy(collision.gameObject);
         }
